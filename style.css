@@ -111,3 +111,30 @@ header {
 }
 
 .project-card i { color: #38bdf8; margin-bottom: 20px; }
+
+#audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(56, 189, 248, 0.3);
+    backdrop-filter: blur(10px);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2000;
+    border: 1px solid #38bdf8;
+    transition: 0.3s;
+}
+
+#audio-control:hover {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+#audio-control i {
+    font-size: 20px;
+}
