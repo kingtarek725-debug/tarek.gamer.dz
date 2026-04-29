@@ -1,13 +1,21 @@
-// تأثير بسيط عند التمرير لتغيير خلفية القائمة
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) {
-        nav.style.background = '#0f172a';
-        nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.5)';
-    } else {
-        nav.style.background = 'rgba(30, 41, 59, 0.8)';
-        nav.style.boxShadow = 'none';
-    }
+const video = document.getElementById("myVideo");
+const muteIcon = document.getElementById("mute-icon");
+
+// محاولة تشغيل الصوت تلقائياً (قد تفشل في بعض المتصفحات)
+window.addEventListener('load', () => {
+    video.muted = false; // تفعيل الصوت
+    video.play().catch(error => {
+        console.log("المتصفح منع التشغيل التلقائي للصوت، سيتم الكتم حتى يضغط المستخدم");
+        video.muted = true;
+    });
 });
 
-console.log("الموقع جاهز للعمل!");
+function toggleMute() {
+    if (video.muted) {
+        video.muted = false;
+        muteIcon.classList.replace("fa-volume-mute", "fa-volume-up");
+    } else {
+        video.muted = true;
+        muteIcon.classList.replace("fa-volume-up", "fa-volume-mute");
+    }
+}
