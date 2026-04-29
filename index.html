@@ -10,17 +10,14 @@
 </head>
 <body>
 
-   <!-- استبدل قسم الفيديو بهذا الكود -->
 <div class="video-background">
-    <video autoplay loop playsinline id="myVideo">
+    <!-- preload="auto" تجعل المتصفح يبدأ التحميل فوراً -->
+    <video autoplay loop playsinline id="myVideo" preload="auto">
         <source src="home.mp4" type="video/mp4">
+        <!-- نسخة احتياطية إذا كان المتصفح لا يدعم mp4 -->
+        متصفحك لا يدعم تشغيل الفيديو.
     </video>
     <div class="overlay"></div>
-</div>
-
-<!-- زر التحكم في الصوت (اختياري ولكنه احترافي) -->
-<div id="audio-control" onclick="toggleMute()">
-    <i id="mute-icon" class="fas fa-volume-mute"></i>
 </div>
     
     <nav>
