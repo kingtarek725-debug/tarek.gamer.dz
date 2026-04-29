@@ -1,21 +1,12 @@
-const video = document.getElementById("myVideo");
-const muteIcon = document.getElementById("mute-icon");
+const video = document.getElementById('myVideo');
 
-// محاولة تشغيل الصوت تلقائياً (قد تفشل في بعض المتصفحات)
-window.addEventListener('load', () => {
-    video.muted = false; // تفعيل الصوت
-    video.play().catch(error => {
-        console.log("المتصفح منع التشغيل التلقائي للصوت، سيتم الكتم حتى يضغط المستخدم");
-        video.muted = true;
-    });
+// التأكد من تشغيل الفيديو بمجرد أن يصبح جاهزاً
+video.addEventListener('canplaythrough', function() {
+    video.play();
+}, false);
+
+// إذا حدث خطأ في التحميل، حاول إعادة التشغيل
+video.addEventListener('error', function() {
+    console.log("حدث خطأ في تحميل الفيديو، جاري المحاولة مرة أخرى...");
+    video.load();
 });
-
-function toggleMute() {
-    if (video.muted) {
-        video.muted = false;
-        muteIcon.classList.replace("fa-volume-mute", "fa-volume-up");
-    } else {
-        video.muted = true;
-        muteIcon.classList.replace("fa-volume-up", "fa-volume-mute");
-    }
-}
