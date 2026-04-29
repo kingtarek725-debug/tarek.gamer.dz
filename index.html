@@ -10,15 +10,19 @@
 </head>
 <body>
 
-    <!-- فيديو الخلفية -->
-    <div class="video-background">
-        <video autoplay muted loop playsinline id="myVideo">
-            <source src="home.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
-        </video>
-        <div class="overlay"></div> <!-- طبقة تظليل لتوضيح النصوص -->
-    </div>
+   <!-- استبدل قسم الفيديو بهذا الكود -->
+<div class="video-background">
+    <video autoplay loop playsinline id="myVideo">
+        <source src="home.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+</div>
 
+<!-- زر التحكم في الصوت (اختياري ولكنه احترافي) -->
+<div id="audio-control" onclick="toggleMute()">
+    <i id="mute-icon" class="fas fa-volume-mute"></i>
+</div>
+    
     <nav>
         <div class="logo">Tarek Gamer</div>
         <ul>
