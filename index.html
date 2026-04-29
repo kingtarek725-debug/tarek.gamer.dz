@@ -3,52 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow"> <!-- لمنع الأرشفة في جوجل -->
-    <title>Tarek Gamer | الموقع الرسمي</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>الموقع الشخصي الاحترافي</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<div class="video-background">
-    <!-- preload="auto" تجعل المتصفح يبدأ التحميل فوراً -->
-    <video autoplay loop playsinline id="myVideo" preload="auto">
-        <source src="home.mp4" type="video/mp4">
-        <!-- نسخة احتياطية إذا كان المتصفح لا يدعم mp4 -->
-        متصفحك لا يدعم تشغيل الفيديو.
-    </video>
-    <div class="overlay"></div>
-</div>
-    
+    <!-- حاوية الفيديو المطور -->
+    <div class="video-container">
+        <video autoplay loop playsinline id="myVideo" preload="auto">
+            <source src="home.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <!-- التحكم في الصوت -->
+    <div id="audio-btn" onclick="toggleAudio()">
+        <i id="audio-icon" class="fas fa-volume-mute"></i>
+    </div>
+
     <nav>
-        <div class="logo">Tarek Gamer</div>
+        <div class="logo">TAREK GAMER</div>
         <ul>
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#projects">المشاريع</a></li>
-            <li><a href="#contact">تواصل معي</a></li>
+            <li><a href="#about">حول</a></li>
         </ul>
     </nav>
 
     <header id="home">
-        <div class="hero-content">
-            <h1>مرحباً بك في عالمي</h1>
-            <p>مطور سكربتات SAMP | مصمم جرافيك | محب للتقنية</p>
-            <a href="#projects" class="btn">اكتشف المزيد</a>
+        <div class="hero">
+            <h1>إبداع بلا حدود</h1>
+            <p>مطور سيرفرات ومصمم جرافيك محترف</p>
+            <div class="scrolldown">
+                <span></span>
+            </div>
         </div>
     </header>
 
     <section id="projects">
-        <h2 class="section-title">أعمالي الاحترافية</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <i class="fas fa-code fa-3x"></i>
-                <h3>Pawn Scripting</h3>
-                <p>تطوير أنظمة متكاملة لسيرفرات SAMP (Bordj Okris City).</p>
+        <h2 style="text-align:center; font-size: 2.5rem; margin-bottom: 40px;">مشاريع مختارة</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-gamepad fa-3x"></i>
+                <h3>SAMP Development</h3>
+                <p>تطوير أنظمة متقدمة لسيرفرات سان اندرياس.</p>
             </div>
-            <div class="project-card">
-                <i class="fas fa-paint-brush fa-3x"></i>
-                <h3>Graphic Design</h3>
-                <p>تصميم بطاقات FIFA ولوغو احترافي بهوية فريدة.</p>
+            <div class="card">
+                <i class="fas fa-code fa-3x"></i>
+                <h3>Web Design</h3>
+                <p>بناء واجهات مستخدم حديثة وسريعة.</p>
             </div>
         </div>
     </section>
