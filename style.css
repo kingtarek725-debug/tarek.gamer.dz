@@ -1,104 +1,37 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-    overflow-x: hidden;
-    background: #000;
-}
-
-/* ضبط الفيديو ليغطي الشاشة بسلاسة */
-.video-container {
+/* تأكد من أن ملف الصورة في نفس مجلد index.html */
+.bg-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-}
-
-#myVideo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* جرب تغيير الامتداد هنا إذا كانت الصورة تنتهي بـ .jpg أو .png */
+    background: url('homephoto.png') no-repeat center center; 
+    background-size: cover;
+    z-index: -2;
+    background-color: #050505; /* لون احتياطي في حال لم تظهر الصورة */
 }
 
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* تظليل الصورة */
+    z-index: -1;
 }
 
-/* القائمة العلوية */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 8%;
-    align-items: center;
+#music-btn {
     position: fixed;
-    width: 84%;
-    top: 0;
-    z-index: 1000;
-    transition: 0.5s;
-}
-
-nav .logo { font-size: 1.5rem; font-weight: bold; color: #00d4ff; text-shadow: 0 0 10px #00d4ff; }
-nav ul { display: flex; list-style: none; }
-nav ul li { margin-right: 30px; }
-nav ul li a { text-decoration: none; color: white; font-weight: 500; transition: 0.3s; }
-nav ul li a:hover { color: #00d4ff; }
-
-/* المحتوى الرئيسي */
-header {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero h1 { font-size: 5rem; margin-bottom: 10px; text-transform: uppercase; }
-.hero p { font-size: 1.5rem; opacity: 0.8; }
-
-/* زر الصوت */
-#audio-btn {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    width: 55px;
-    height: 55px;
-    background: rgba(0, 212, 255, 0.2);
-    border: 1px solid #00d4ff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    bottom: 20px;
+    right: 20px;
+    background: #00d4ff;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 50px;
     cursor: pointer;
-    z-index: 2000;
-    backdrop-filter: blur(5px);
-    transition: 0.3s;
+    z-index: 1000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-
-#audio-btn:hover { background: #00d4ff; color: #000; transform: scale(1.1); }
-
-/* الأقسام */
-section { padding: 80px 10%; background: rgba(0,0,0,0.8); }
-
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-
-.card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-    text-align: center;
-    transition: 0.3s;
-}
-
-.card:hover { border-color: #00d4ff; transform: translateY(-10px); background: rgba(0, 212, 255, 0.05); }
-.card i { color: #00d4ff; margin-bottom: 15px; }
