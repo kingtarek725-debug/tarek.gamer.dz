@@ -1,31 +1,27 @@
-const video = document.getElementById('myVideo');
-const audioIcon = document.getElementById('audio-icon');
+const music = document.getElementById('bgMusic');
+const musicIcon = document.getElementById('music-icon');
+const musicText = document.querySelector('.music-text');
 
-// محاولة البدء السلس
-video.oncanplay = () => {
-    console.log("الفيديو جاهز للعمل بسلاسة");
-    video.play();
-};
-
-// التحكم في الصوت
-function toggleAudio() {
-    if (video.muted) {
-        video.muted = false;
-        audioIcon.className = "fas fa-volume-up";
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+        musicIcon.className = "fas fa-pause";
+        musicText.innerText = "إيقاف الموسيقى";
+        document.getElementById('music-btn').style.background = "#00d4ff";
+        document.getElementById('music-btn').style.color = "#000";
     } else {
-        video.muted = true;
-        audioIcon.className = "fas fa-volume-mute";
+        music.pause();
+        musicIcon.className = "fas fa-play";
+        musicText.innerText = "تشغيل الموسيقى";
+        document.getElementById('music-btn').style.background = "rgba(0, 212, 255, 0.1)";
+        document.getElementById('music-btn').style.color = "#fff";
     }
 }
 
-// تغيير خلفية الـ Nav عند التمرير
-window.onscroll = () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 100) {
-        nav.style.background = "rgba(0,0,0,0.9)";
-        nav.style.padding = "10px 8%";
-    } else {
-        nav.style.background = "transparent";
-        nav.style.padding = "20px 8%";
-    }
-};
+// تأثير بسيط عند تحريك الماوس على الخلفية
+document.addEventListener('mousemove', (e) => {
+    const bg = document.querySelector('.bg-container');
+    const x = (window.innerWidth / 2 - e.pageX) / 50;
+    const y = (window.innerHeight / 2 - e.pageY) / 50;
+    bg.style.transform = `scale(1.1) translate(${x}px, ${y}px)`;
+});
