@@ -3,60 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>الموقع الشخصي الاحترافي</title>
+    <title>Tarek Gamer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- حاوية الفيديو المطور -->
-    <div class="video-container">
-        <video autoplay loop playsinline id="myVideo" preload="auto">
-            <source src="home.mp4" type="video/mp4">
-        </video>
+    <!-- خلفية الصورة - أضفنا مساراً احتياطياً -->
+    <div class="bg-container" id="bg">
         <div class="overlay"></div>
     </div>
 
-    <!-- التحكم في الصوت -->
-    <div id="audio-btn" onclick="toggleAudio()">
-        <i id="audio-icon" class="fas fa-volume-mute"></i>
+    <!-- الموسيقى - تأكد أن الملف mp3 -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="homemusic.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- زر التشغيل (ضروري جداً لأن المتصفح يمنع التشغيل التلقائي) -->
+    <div id="music-btn" onclick="toggleMusic()">
+        <i id="music-icon" class="fas fa-play"></i>
+        <span id="btn-text">تشغيل الموسيقى</span>
     </div>
 
-    <nav>
-        <div class="logo">TAREK GAMER</div>
-        <ul>
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#projects">المشاريع</a></li>
-            <li><a href="#about">حول</a></li>
-        </ul>
-    </nav>
-
-    <header id="home">
+    <header>
         <div class="hero">
-            <h1>إبداع بلا حدود</h1>
-            <p>مطور سيرفرات ومصمم جرافيك محترف</p>
-            <div class="scrolldown">
-                <span></span>
-            </div>
+            <h1>TAREK GAMER</h1>
+            <p>مطور سيرفرات ومصمم محترف</p>
         </div>
     </header>
-
-    <section id="projects">
-        <h2 style="text-align:center; font-size: 2.5rem; margin-bottom: 40px;">مشاريع مختارة</h2>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-gamepad fa-3x"></i>
-                <h3>SAMP Development</h3>
-                <p>تطوير أنظمة متقدمة لسيرفرات سان اندرياس.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-code fa-3x"></i>
-                <h3>Web Design</h3>
-                <p>بناء واجهات مستخدم حديثة وسريعة.</p>
-            </div>
-        </div>
-    </section>
 
     <script src="script.js"></script>
 </body>
